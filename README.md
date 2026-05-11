@@ -49,29 +49,20 @@ EasyLearn is a modern, data-driven full-stack application designed to revolution
     cd EasyLearn
     ```
 
-2.  **Start the Database:**
+2.  **Start the entire stack (Database, Backend, and Frontend):**
     ```bash
-    docker compose up -d
+    docker compose up --build
     ```
 
-3.  **Setup the Backend:**
+3.  **Seed the Database (First time only):**
+    Open a new terminal and run:
     ```bash
-    cd backend
-    python -m venv venv
-    source venv/bin/activate  # On Windows use: venv\Scripts\activate
-    pip install -r requirements.txt
-    python -m scripts.generate_units # Seed the database
-    uvicorn app.main:app --reload
+    docker exec -it easylearn-backend-1 python -m scripts.generate_units
     ```
 
-4.  **Setup the Frontend:**
-    ```bash
-    cd frontend
-    npm install
-    npm run dev
-    ```
-
-5.  Open `http://localhost:5173` in your browser.
+4.  **Access the application:**
+    *   Frontend: `http://localhost:5173`
+    *   Backend API Docs: `http://localhost:8000/docs`
 
 ---
 
@@ -111,26 +102,17 @@ EasyLearn es una aplicación full-stack moderna y orientada a datos, diseñada p
     cd EasyLearn
     ```
 
-2.  **Iniciar la Base de Datos:**
+2.  **Iniciar todo el entorno (Base de Datos, Backend y Frontend):**
     ```bash
-    docker compose up -d
+    docker compose up --build
     ```
 
-3.  **Configurar el Backend:**
+3.  **Poblar la Base de Datos (Solo la primera vez):**
+    Abre una nueva terminal y ejecuta:
     ```bash
-    cd backend
-    python -m venv venv
-    venv\Scripts\activate  # En Mac/Linux usar: source venv/bin/activate
-    pip install -r requirements.txt
-    python -m scripts.generate_units # Poblar la base de datos
-    uvicorn app.main:app --reload
+    docker exec -it easylearn-backend-1 python -m scripts.generate_units
     ```
 
-4.  **Configurar el Frontend:**
-    ```bash
-    cd frontend
-    npm install
-    npm run dev
-    ```
-
-5.  Abre `http://localhost:5173` en tu navegador.
+4.  **Acceder a la aplicación:**
+    *   Frontend: `http://localhost:5173`
+    *   Documentación API: `http://localhost:8000/docs`
