@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes blob-1 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(80px, -120px) scale(1.15);
+  }
+  66% {
+    transform: translate(-60px, 40px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes blob-2 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-100px, 80px) scale(1.2);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes blob-3 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(50px, 80px) scale(0.85);
+  }
+  66% {
+    transform: translate(-70px, -90px) scale(1.1);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob-1 {
+  animation: blob-1 25s infinite alternate ease-in-out;
+}
+
+.animate-blob-2 {
+  animation: blob-2 30s infinite alternate ease-in-out;
+}
+
+.animate-blob-3 {
+  animation: blob-3 28s infinite alternate ease-in-out;
+}
