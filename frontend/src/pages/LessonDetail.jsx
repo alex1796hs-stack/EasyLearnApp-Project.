@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import api from "../api/api"
+import Background from "../components/Background"
 
 function LessonDetail() {
 
@@ -138,8 +139,9 @@ function LessonDetail() {
     if (finished) {
         const percentage = Math.round((score / lesson.questions.length) * 100)
         return (
-            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white flex items-center justify-center p-6">
-                <div className="max-w-md w-full bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl shadow-xl text-center">
+            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white flex items-center justify-center p-6 relative overflow-hidden">
+                <Background />
+                <div className="max-w-md w-full bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl shadow-xl text-center relative z-10">
                     <h1 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">{lesson.title}</h1>
                     <p className="text-5xl mb-4">🎉</p>
                     <p className="text-xl font-medium mb-6">¡Lección completada!</p>
@@ -161,10 +163,8 @@ function LessonDetail() {
 
     if (!showPractice) {
         return (
-            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white">
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                    <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
-                </div>
+            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden">
+                <Background />
 
                 <div className="max-w-3xl mx-auto px-6 pt-8 pb-10 relative z-10">
                     <button
@@ -218,8 +218,9 @@ function LessonDetail() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white">
-            <div className="max-w-2xl mx-auto px-6 pt-8 pb-10">
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden">
+            <Background />
+            <div className="max-w-2xl mx-auto px-6 pt-8 pb-10 relative z-10">
                 <button
                     onClick={() => navigate("/dashboard")}
                     className="mb-6 flex items-center gap-2 text-blue-300 hover:text-white transition-colors text-sm font-medium"

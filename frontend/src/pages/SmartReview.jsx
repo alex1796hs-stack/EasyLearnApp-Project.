@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import api from "../api/api"
+import Background from "../components/Background"
 
 function SmartReview() {
 
@@ -119,8 +120,9 @@ function SmartReview() {
 
     // --- No weak questions (user is doing great!) ---
     if (noWeakQuestions) return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white flex items-center justify-center p-6">
-            <div className="max-w-md w-full bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl shadow-xl text-center">
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white flex items-center justify-center p-6 relative overflow-hidden">
+            <Background variant="warm" />
+            <div className="max-w-md w-full bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl shadow-xl text-center relative z-10">
                 <p className="text-6xl mb-6">🏆</p>
                 <h1 className="text-2xl font-bold mb-3 bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
                     ¡Perfecto historial!
@@ -143,8 +145,9 @@ function SmartReview() {
         const percentage = Math.round((score / questions.length) * 100)
         const isGood = percentage >= 70
         return (
-            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white flex items-center justify-center p-6">
-                <div className="max-w-md w-full bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl shadow-xl text-center">
+            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white flex items-center justify-center p-6 relative overflow-hidden">
+                <Background variant="warm" />
+                <div className="max-w-md w-full bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl shadow-xl text-center relative z-10">
                     <p className="text-5xl mb-4">{isGood ? "🎉" : "💪"}</p>
                     <h1 className="text-2xl font-bold mb-2 bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
                         Repaso completado
@@ -177,11 +180,8 @@ function SmartReview() {
     const question = questions[currentQuestion]
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white">
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-                <div className="absolute top-10 left-10 w-72 h-72 bg-amber-500 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
-            </div>
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden">
+            <Background variant="warm" />
 
             <div className="max-w-2xl mx-auto px-6 pt-8 pb-10 relative z-10">
 

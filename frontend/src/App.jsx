@@ -8,6 +8,7 @@ import Lessons from './pages/Lessons';
 import LessonDetail from './pages/LessonDetail';
 import Profile from './pages/Profile';
 import SmartReview from './pages/SmartReview';
+import Background from './components/Background';
 
 function App() {
   return (
@@ -50,10 +51,7 @@ function App() {
           element={
             <ProtectedRoute>
               <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 flex items-center justify-center relative overflow-hidden text-white">
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                    <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
-                </div>
+                <Background />
                 
                 <div className="relative text-center z-10 px-6">
                     <h1 className="text-5xl font-black bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-4">

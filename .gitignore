@@ -6,8 +6,9 @@ __pycache__/
 backend/venv/
 
 # Environment variables
-backend/.env
-
+.env
+.env.*
+*.local
 # VSCode
 .vscode/
 

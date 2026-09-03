@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import api from "../api/api"
 import { useNavigate } from "react-router-dom"
+import Background from "../components/Background"
 
 function Dashboard() {
 
@@ -51,10 +52,7 @@ function Dashboard() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white pb-10">
 
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-                <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
-            </div>
+            <Background />
 
             <div className="max-w-2xl mx-auto px-6 pt-10 relative z-10">
                 <div className="flex justify-between items-center mb-8">

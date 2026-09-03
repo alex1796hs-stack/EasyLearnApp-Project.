@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import api from "../api/api"
+import Background from "../components/Background"
 
 function Profile() {
     const [profile, setProfile] = useState(null)
@@ -103,14 +104,11 @@ function Profile() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white">
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden">
+            <Background />
 
             {/* Header */}
-            <div className="relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
-                </div>
+            <div className="relative">
 
                 <div className="relative max-w-2xl mx-auto px-6 pt-8 pb-6">
                     <button

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import api from "../api/api"
 import { useNavigate } from "react-router-dom"
+import Background from "../components/Background"
 
 function Placement() {
 
@@ -108,7 +109,8 @@ function Placement() {
 
     if (result) {
         return (
-            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white pb-12 pt-8 px-4">
+            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white pb-12 pt-8 px-4 relative overflow-hidden">
+                <Background />
                 <div className="max-w-3xl mx-auto relative z-10">
                     <div className="bg-white/5 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-white/10 text-center mb-10 overflow-hidden relative">
                         <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 mix-blend-overlay"></div>
@@ -150,11 +152,8 @@ function Placement() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white">
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-                <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
-            </div>
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden">
+            <Background />
 
             <div className="max-w-3xl mx-auto px-6 pt-10 pb-16 relative z-10">
                 <button
