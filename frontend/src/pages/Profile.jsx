@@ -10,6 +10,7 @@ function Profile() {
     const [error, setError] = useState("")
     const navigate = useNavigate()
     const { logout } = useAuth()
+    const [viewDate, setViewDate] = useState(new Date())
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -61,8 +62,6 @@ function Profile() {
     const getInitials = (email) => {
         return email ? email.charAt(0).toUpperCase() : "?"
     }
-
-    const [viewDate, setViewDate] = useState(new Date())
 
     const daysInMonth = (y, m) => new Date(y, m + 1, 0).getDate()
     const firstDayOfMonth = (y, m) => new Date(y, m, 1).getDay()
